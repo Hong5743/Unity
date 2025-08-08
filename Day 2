@@ -1,0 +1,52 @@
+# Day 2
+
+C# 을 공부하려고 유튜브에 검색했다.
+그랬더니 Unity에서 직접 C#을 코딩하면서 알려주는 강의가 있어 보는데 처음부터 막혔다.
+
+Unity에서 C# 스크립트를 만들어 실행하면 자동적으로 마이크로 visual studio가 설치 되었다.
+그래서 실행을 했더니 Java class 파일이랑 뭔가 비슷하게 생긴 것 같다.
+
+하지만 유튜브 영상에서는 뭔가 참조도 몇개 있고 빈 함수도 있었는데
+
+나는 아래와 같이 간단했다. 일단... unity엔진 참조했고 class가 만들어 졌으니 영상을 계속 봐보자...
+using UnityEngine;
+
+public class NewEmptyCSharpScript
+{
+    
+}
+
+## 변수
+using UnityEngine;
+
+public class NewEmptyCSharpScript
+{
+    int x = 100;
+
+    void Start()
+    {
+        // 게임이 실행 될 때 최초로 1회 동작하는 함수
+        print(x);
+    }
+
+}
+자바랑 너무 비슷해서 여기까지 그냥 적었는데 print 함수에서 오류가 났다.
+무슨 오류인가 하면
+### 유니티에서 스크립트가 게임 오브젝트에 컴포넌트로 붙어서 작동하려면, 반드시 MonoBehaviour 클래스를 상속받아야 합니다.
+그렇구나...
+
+using UnityEngine;
+
+public class NewEmptyCSharpScript : MonoBehaviour
+{
+    int x = 100;
+
+    void Start()
+    {
+        // 게임이 시작될 때 단 한 번 호출됩니다.
+        print(x); // 또는 (x);
+    }
+}
+
+위와 같이 코드를 수정한 후 저장하고 컴파일했다. 
+유니티로 돌아와 Hierarchy 창의 Main Camera 오브젝트에 방금 만든 C# 스크립트를 Inspector 창에 끌어다 추가했다. 그리고 게임을 실행했더니 콘솔 창에 100이 잘 출력되었다.
