@@ -1,0 +1,102 @@
+연산자
+
+// 사칙연산
+using UnityEngine;
+
+public class NewEmptyCSharpScript : MonoBehaviour
+{
+    void Start()
+    {
+      int a = 5;
+      int b = 3;
+
+      Debug.Log(a + b);  // 더하기
+      Debug.Log(a - b);  // 빼기
+      Debug.Log(a * b);  // 곱하기
+      Debug.Log(a / b);  // 나누기
+      Debug.Log(a % b);  // 나머지
+    }
+}
+
+// 비교 연산(true false 형태로 값이 출력된다)
+// 사칙연산 보다 계산 순서가 느리다.
+using UnityEngine;
+
+public class NewEmptyCSharpScript : MonoBehaviour
+{
+    void Start()
+    {
+      int a = 5;
+      int b = 3;
+
+      Debug.Log(a < b);   // a가 b 보다 작다
+      Debug.Log(a > b);   // a가 b 보다 크다
+      Debug.Log(a >= b);  // a는 b보다 크거나 같다
+      Debug.Log(a <= b);  // a는 b보다 작거나 같다
+      Debug.Log(a == b);  // a는 b랑 같다
+      Debug.Log(a != b);  // a는 b랑 다르다
+    }
+}
+
+// 논리 연산자
+using UnityEngine;
+
+public class NewEmptyCSharpScript : MonoBehaviour
+{
+    void Start()
+    {
+      int a = 5;
+      int b = 3;
+      int c = 4;
+      int d = 5;
+
+      Debug.Log(a < b || c < d);   // a가 b 보다 작거나 c가 d보다 작다.
+      // || -> or에 의미
+
+      Debug.Log(a < b && c < d);   // a가 b 작고 c도 d보다 작다.
+      // && -> and에 의미
+
+      Debug.Log(!true);            // true가 아니다.
+      // !는 not에 의미
+    }
+}
+
+// 할당 연산자
+using UnityEngine;
+
+public class NewEmptyCSharpScript : MonoBehaviour
+{
+    void Start()
+    {
+      int a = 5;
+      int b = 3;
+      int c = 4;
+      int d = 5;
+
+      a = b + c; // a = 7
+      a = a + 2; // 9
+      a += 2;    // 11
+      a *= 2;    // 22
+      a /= 2;    // 10
+      a++;       // 11
+      a--;       // 10
+     
+    }
+}
+
+// 조건 연산자
+using UnityEngine;
+
+public class NewEmptyCSharpScript : MonoBehaviour
+{
+    void Start()
+    {
+      int a = 5;
+      int b = 3;
+      int c = 4;
+      int d = 5;
+
+      a = b + c ? 1 : 2; // ? 앞이 true 면 1 false면 2(삼항 연산자)
+
+    }
+}
